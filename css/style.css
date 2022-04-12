@@ -29,7 +29,9 @@ ol {
     background-color: rgba(124, 57, 150, 1);
 
 }
-
+.header-wrapper{
+    overflow-y: hidden;
+}
 .top-header-scrolled {
     position: relative;
     top: 0;
