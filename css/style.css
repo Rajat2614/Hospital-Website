@@ -358,6 +358,7 @@ ol {
     height:80px;
     padding: 0px 0px;
     margin: 20px;
+    border : none;
 }
 
 .footer-wrapper .row-download .btn h5{
