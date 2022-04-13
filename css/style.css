@@ -1,78 +1,164 @@
-html,body {
-    margin:0;
-    padding:0;
-    overflow-x:hidden;
-}
-
 ul,
-ol {
+ol{
     margin: 0;
     padding: 0;
 }
 
-:root {
+/*====Variable Design====*/
+
+:root{
     --primary-color: rgba(124, 57, 150, 1);
     --secondary-color:rgba(226, 209, 233, 1);
     --black-color: #000;
     --white-color: #fff;
 }
 
-.top-header .btn-primary {
+html{
+    scroll-behavior: smooth;
+}
 
-    font-family: 'OktaNeue-Regular';
-    font-style: normal;
+body{
+    font-size: 100%;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 26px;
-    text-align: center;
-    border: none;
-    background-color: rgba(124, 57, 150, 1);
+    font-family: 'Dosis' sans-serif;
+    overflow-x: hidden ;
+}
 
+/*======= Custom CSS Design ======*/
+
+h1{
+    font-size: 2.75rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--black-color);
+    font-style: oblique;
 }
-.header-wrapper{
-    overflow-y: hidden;
+
+h2{
+    font-weight: 600;
+    font-size: 1.5625rem;
+    color: var(--primary-color);
+    line-height: 2.5rem;
 }
-.top-header-scrolled {
+
+h4{
+    font-size: 1.125rem;
+    font-weight: 400;
+    margin-bottom: 0.9375rem;
+    color: var(--white-color);
+    transition: all .3s linear;
+}
+
+/* h5{
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: var(--white-color);
+} */
+
+p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+    color: var(--primary-color);
+    letter-spacing: 0.0625rem;
+    opacity: 0.8;
+}
+
+.wrapper{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: var(--secondary-color);
+}
+
+.text-content{
+    width: 60%;
+    margin: auto;
+}
+
+/*========== Header Design ==== */ 
+
+.top-header{
+    background-color: var(--white-color);
+}
+
+.top-header span{
+    font-size: 0.875rem;
+    color: var(--white-color);
+    letter-spacing: 0.1062rem;
+}
+
+.navigation-wrap{
     position: relative;
+    width: 100%;
+    left: 0;
+    z-index: 1000;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}   
+
+.navigation-wrap .nav-item{
+    padding: 0 0.5rem;
+    transition: all 200ms linear;
+}
+
+.navbar-toggler:focus{
+    outline: unset;
+    border: none;
+    box-shadow: none;
+}
+
+.navbar{
+    background-color: var(--primary-color);
+    margin-top: 0;
+    border-radius: 10px;
+    width: 1180px;
+    margin-left: 100px;
+}
+.navigation-wrap .nav-link{
+    padding-top: 0.9375rem;
+    font-size: 0.90rem;
+    font-weight: 500;
+    color: var(--white-color);
+    letter-spacing: 0.0255rem;
+    /* background-color: var(--primary-color); */
+}
+
+.top-header .btn-primary{
+    background-color: var(--primary-color);
+    border: none;
+}
+
+.navigation-wrap .icon{
+    color: var(--white-color);
+    display: inline;
+}
+
+
+/* Change NavBar Styling on scroll */
+
+/* .navigation-wrap.scroll-on{
+    position: fixed;
+    background-color: var(--black-color);
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--bg-white);
-    box-shadow: 0 0.25rem 0.375rem rgba(12, 0, 46, 0.05);
-    -webkit-box-shadow: 0 0.25rem 0.375rem rgba(12, 0, 46, 0.05);
+    box-shadow: 0 0 .125rem 1.75rem 1 rgb(0,0,0,0.9);
+    transition: all .15s ease-in-out 0s;
 }
 
-.navbar {
-    height: 100px;
-    width: 1180px;
-    left: 100px;
-    top: 15px;
-    border-radius: 5px;
-    background-color: var(--primary-color);
-}
+.navigation-wrap.scroll-on .nav-link:hover,
+.navigation-wrap.scroll-on .nav-link:active{
+    color: var(--primary-color);   
+} */
 
-.navbar .icon {
-    left: 1000px
-}
-
-.navbar #submit {
-    height: 16.625px;
-    width: 16.625px;
-    left: 1253px;
-    top: 188px;
-    border-radius: 0px;
-
-}
-.navbar .nav-item{
-    float: left;
-}
+/*==== Top Centre Design ====*/
 
 .banner-wrapper {
-    position: absolute;
-    width: 1366px;
-    height: 631px;
+    position: relative;
+    height: 630px;
     left: 0px;
-    top: 275px;
+    top: 20px;
     width: 100;
     background: url(../Images/Centres.png);
 }
@@ -104,6 +190,7 @@ ol {
 
 .banner-wrapper h1 {
     font-weight: bolder;
+    color: var(--black-color);
 }
 
 .banner-wrapper .banner-content .chat {
@@ -155,14 +242,11 @@ ol {
 
 }
 
-/* Centres of Excellence*/
-#ourCentre {
-    position: absolute;
-    top: 1000px;
-}
-
-.card-wrapper {
-    width: auto;
+/*==== Our Centres =====*/
+.card-wrapper{
+    position: relative;
+    margin-top: 120px ;
+    text-align: center;
 }
 
 .card-wrapper .card-body {
@@ -170,8 +254,9 @@ ol {
 }
 
 .card-wrapper .row h1 {
-    margin: 20px 20px 20px 500px;
-    padding: 10px;
+    margin: auto;
+    margin-bottom: 40px;
+    font-style: oblique;
 }
 
 .card-wrapper .card img {
@@ -182,25 +267,39 @@ ol {
 .card-wrapper .card {
     margin: 0.25rem;
     background-color: rgba(245, 232, 250, 1);
-    left: 100px;
+    left: 0px;
     padding: 0 0;
     border-radius: 10px 10px;
+    width: 100px;
 }
 
-.card-wrapper .card .card-body {
+.card-wrapper .card .card-body.active{
     background-color: var(--primary-color);
     margin: 0 0;
     border-radius: 0px 0px 10px 10px;
 }
+.card-wrapper .card .card-body .card-title{
 
-#relation {
-    position: absolute;
-    top: 1500px;
+    font-weight: 500;
 }
 
-.relation-wrapper {
-    width: 1366px;
-    margin: 50px;
+/* Relation */
+
+.relation-wrapper{
+    position: relative;
+    margin-left: 50px;
+}
+
+.relation-wrapper .container {
+    box-shadow: 10px 5px 5px grey;
+} 
+
+.relation-wrapper .card-body .fas{
+    color: var(--primary-color);
+}
+.relation-wrapper .row .card-title{
+    color: #000;
+    font-size: medium;
 }
 
 #relation .relation-wrapper .container {
@@ -230,84 +329,76 @@ ol {
     width: 200px;
     height: fit-content;
     border-radius: 10px;
+    box-shadow: 9px 5px 5px rgb(189, 187, 190);
+}
+
+/*==== Treatment ====*/
+
+.treatment-wrapper {
+    position: relative;
+    background: rgba(251, 242, 254, 1);
+}
+
+.treatment-wrapper .col-12.mb-2.text-content.text-center{
+    position: relative;
     
 }
 
-#treatment {
-    position: absolute;
-    top: 2200px;
-}
-
-#treatment .treatment-wrapper {
-    background: rgba(251, 242, 254, 1);
-    width: 1366px;
-}
-
-.treatment-wrapper .text-content {
+.treatment-wrapper .text-content{
+    display: inline-block;
+    margin-top: 18px;
     padding: 15px;
-    color: var(--primary-color);
-}
-.treatment-wrapper .btn{
-    font-size: 25px;
-    position: relative;
-    color: var(--primary-color);
-}
-.treatment-wrapper .text-content h2{
-    display: inline;
-    float: center;
-}
-.treatment-wrapper .text-content h5{
-    display: inline;
-    float: right;
-    padding: 15px;
-
+    font-weight: 500;
 }
 
 .treatment-wrapper .switch i{
+    position: relative;
+    margin: auto;
     width: 40px;
     border: 1rem;
     background-color: var(--secondary-color);
     border-radius: 5px;
     padding: 0 0;
+    font-size: larger;
+}
+.treatment-wrapper .switch .text-content{
+    margin-left: 20px;
+    margin-top: 0px;
+    padding-top: 0px;
 }
 
-#about{
-    position: absolute;
-    top: 2900px;
-}
-.about-wrapper{
-    width: 1366px;
-}
-#about .about-wrapper .hospital h2{
-    display: inline;
-    float: center;
+/*==== Testimonials ====*/
+
+#patient .patient-wrapper{
+    position: relative;
+    background-color: var(--white-color);
+    margin-bottom: 60px;
+    margin-top: 60px    ;
 }
 
-.about-wrapper img{
-    width: 600px;
-    margin: 30px 0px;
+.patient-wrapper h1{
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    color: var(--black-color);
+    font-style: italic;
+    font-variant: small-caps;
 }
 
-.about-wrapper .about-content h2,
-.about-wrapper .about-content p{
-    display: inline;
-    top: 0;
+.patient-wrapper h3{
+    text-align: center;
+   font-variant:small-caps;
+   font-size: 30px;
 }
-.about-wrapper .btn-primary{
+
+.patient-wrapper .btn-primary{
     background-color: var(--primary-color);
     border: none;
-    width: 120px;
-    height: 50px;
 }
 
-#blog{
-    position: absolute;
-    top: 3500px
-}
-
+/*=== Blog ===*/
 #blog .blog-wrapper {
     background: rgba(251, 242, 254, 1);
-    width: 1366px;
+    
 }
 
 .blog-wrapper .text-content {
@@ -318,22 +409,21 @@ ol {
     font-size: 25px;
     position: relative;
     color: var(--primary-color);
+    margin-left: 300px;
+    font-size: 20px
 }
 .blog-wrapper .text-content h2{
     display: inline;
-    float: center;
+    position: relative;
+    left: 300px;
 }
-.blog-wrapper .text-content h5{
-    display: inline;
-    float: right;
-    padding: 15px;
-}
+
 .blog-wrapper .detail p{
     float: left;
 }
 
 .blog-wrapper .detail h2{
-    font-size: 25px;
+    font-size: 22px;
     text-align: left;
 }
 .blog-wrapper .switch i{
@@ -344,14 +434,33 @@ ol {
     padding: 0 0;
 }
 
-#service{
-    position: absolute;
-    top: 3982px
-} 
+/*=== Media ===*/
+.media-wrapper{
+    position: relative;
+    background-color: var(--white-color);
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
 
+.media-wrapper .row .card{
+    padding: 0;
+    position: relative;
+    border: none;
+}
+
+.media-wrapper .row .big .card-body{
+    background-color: var(--secondary-color);
+    border-radius: 0px  0px 10px 10px;
+}
+.media-wrapper .row.g-0 .card-body{
+    padding-top: 0px;
+}
+
+
+/*==== FOOTER DESIGN ====*/
 .footer-wrapper{
     background-color: var(--primary-color);
-    width: 1366px;
+    padding-top: 5px ;
 }
 
 .footer-wrapper .row-download .btn-primary{
@@ -360,18 +469,22 @@ ol {
     height:80px;
     padding: 0px 0px;
     margin: 20px;
-    border : none;
+    border:none;
 }
 
 .footer-wrapper .row-download .btn h5{
     font-weight: 700;
     display: inline;
 }
+.footer-wrapper .row-download{
+    left: -30px;
+}
 
 .footer-wrapper .social-icons a{
     padding: 5px;
     display: inline;
     float: right ;
+    color: var(--secondary-color);
 }
 
 .footer-wrapper .footer-text .text-right{
@@ -379,10 +492,15 @@ ol {
     float: right;
 }
 
+.footer-wrapper .row p{
+    color: var(--white-color);
+}
 
 
+.footer {
+    background-color: var(--white-color);
+}
 
-
-
-
-
+.foot-wrapper p{
+    margin-bottom: 6px;
+}
